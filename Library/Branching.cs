@@ -6,7 +6,7 @@ namespace Library
 {
     class Branching
     {
-        public static int IfCount(int a, int b)
+        public static int GetIfCount(int a, int b)
         {
             int result;
 
@@ -24,7 +24,7 @@ namespace Library
             }
             return result;
         }
-        public static double Quarters(double x, double y)
+        public static double GetQuarters(double x, double y)
         {
             double result=0;
 
@@ -46,7 +46,7 @@ namespace Library
             }
             return result;
         }
-        public static void Increase(ref double a, ref double b, ref double c)
+        public static void GetIncrease(ref double a, ref double b, ref double c)
         {
             if (a > b)
             {
@@ -67,7 +67,7 @@ namespace Library
                 c = z;
             }       
         }
-        public static double[] QuadraticEquation(double num1, double num2, double num3)
+        public static double[] GetQuadraticEquation(double num1, double num2, double num3)
         {
             if (num1==0)
             {
@@ -95,7 +95,7 @@ namespace Library
             }
             return result;
         }
-        public static string NumberByWords(int number)
+        public static string GetNumberByWords(int number)
         {
             string result = String.Empty;
             string[] units = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };

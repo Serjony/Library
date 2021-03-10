@@ -85,7 +85,7 @@ namespace Library
             return sum;
         }
 
-        public static int[] ReverseArray(int[] array)
+        public static int[] GetReverseArray(int[] array)
         {
             
             int[] reverse = new int[array.Length];
@@ -97,7 +97,7 @@ namespace Library
 
             return reverse;
         }
-        public static int NumberOfOddElementsInArray(int[] array)
+        public static int GetNumberOfOddElementsInArray(int[] array)
         {
             
             int sum = 0;

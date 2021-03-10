@@ -6,7 +6,7 @@ namespace Library
 {
     class Cycle
     {
-        public static int AtoPowB(int a, int b)
+        public static int GetAtoPowB(int a, int b)
         {
             int result=1;
 
@@ -16,7 +16,7 @@ namespace Library
             }
             return result;
         }
-        public static int[] NumbersFrom1To1000DividedA(int a)
+        public static int[] GetNumbersFrom1To1000DividedA(int a)
         {
             int count = 0;
 
@@ -99,7 +99,7 @@ namespace Library
                 throw new Exception("a=b");
             }
         }
-        public static int NumFibonachi(int num)
+        public static int GetNumFibonachi(int num)
         {
             
             int a = 0;
@@ -116,7 +116,7 @@ namespace Library
             return b;
         }
 
-        public static int EuclideanAlgorithm(int numA, int NumB)
+        public static int GetEuclideanAlgorithm(int numA, int NumB)
         {
             while (numA != NumB)
             {
@@ -131,7 +131,7 @@ namespace Library
             }
             return numA;
         }
-        public static int HalfDivisionMethod(int num)
+        public static int GetHalfDivisionMethod(int num)
         {
             int left = 0;
             int right = num;
