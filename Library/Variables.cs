@@ -4,32 +4,32 @@ using System.Text;
 
 namespace Library
 {
-    class Variables
+    public class Variables
     {
         public static int CalculateSolutionForEquation(int a, int b)
         {
             int solution;
             if (a==b)
             {
-                throw new Exception("a==b");
+                throw new ArgumentException("a==b");
             }
 
             solution = (5 * (a + b) * (a + b)) / (b - a);
             return solution;
 
         }
-        public static void Swap(ref int a, ref int b)
+        public static void SwapNumAAndNumB(ref int a, ref int b)
         {
             int x = a;
             a = b;
             b = x;
         }
-        public static int[] Division(int a, int b)
+        public static int[] GetSolutionForADivideBAndRemOfDivision(int a, int b)
         {
 
             if (b==0)
             {
-                throw new Exception("b == 0");
+                throw new ArgumentException("b == 0");
             }
             
             return new int[]{
@@ -37,21 +37,25 @@ namespace Library
                 a%b
             };
         }
-        public static int GetLinearEquationSolution(int a, int b, int c)
+        public static double GetLinearEquationSolution(double a, double b, double c)
         {
-            int solution = (c - b) / a;
+            if (a == 0)
+            {
+                throw new ArgumentException("a == 0");
+            }
+            double solution = Math.Round((c - b) / a,3);
                 return solution;
         }
 
-        public static (double a, double b) GetEquationOfStraightLine(int x1, int y1, int x2, int y2)
+        public static (double a, double b) GetEquationOfStraightLine(double x1, double y1, double x2, double y2)
         {
-            if (x1 == x2 && ((x1 - x2) == 0))
+            if (x1 == x2 )
             {
                 throw new DivideByZeroException("x1-x2=0");
             }
 
-            double a = (y1 - y2) / (x1 - x2);
-            double b = y2 - a * x2;
+            double a = Math.Round(((y1 - y2) / (x1 - x2)),3);
+            double b = Math.Round(y2 - a * x2,3);
             return (a, b);
         }
     }

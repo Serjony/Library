@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Library
 {
-    class DoubleArrays
+    public class DoubleArrays
     {
         public static int FindMinElementInDoubleArray(int[,] array)
         {
@@ -77,7 +77,6 @@ namespace Library
         public static int[] FindIndexOfMaxElementInDoubleArray(int[,] array)
         {
             
-            
             int indexI=0;
             int indexJ=0;
 
@@ -101,23 +100,30 @@ namespace Library
 
         public static int[,] FlipArrayDiagonally(int[,] array)
         {
-            
-            int[,] array2 = new int[array.GetLength(1), array.GetLength(0)];
-           
-
-            for (int i = 0; i < array.GetLength(0); i++)
+            if (array != null && array.Length != 0)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                int[,] array2 = new int[array.GetLength(1), array.GetLength(0)];
+
+                for (int i = 0; i < array.GetLength(0); i++)
                 {
-                    array2[j, i] = array[i, j];
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        array2[j, i] = array[i, j];
+                    }
                 }
-                
+
+                return array2;
             }
-            return array2;
+
+            throw new ArgumentNullException("Array==null");
         }
 
         public static int CountNumberOfElementsGreaterAllNeighbors(int[,] array)
         {
+            if (array != null && array.Length != 0)
+            {
+                throw new ArgumentNullException("Array==null");
+            }
             int count = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
@@ -125,7 +131,7 @@ namespace Library
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (((i <= 0 || array[i - 1, j] < array[i, j])
-                        && (i >= array.GetLength(0) - 1) || array[i + 1, j] < array[i, j])
+                        && (i >= array.GetLength(0) - 1 || array[i + 1, j] < array[i, j]))
                         && (j <= 0 || array[i, j - 1] < array[i, j])
                         && (j >= array.GetLength(1) - 1 || array[i, j + 1] < array[i, j]))
                     {

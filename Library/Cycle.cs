@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Library
 {
-    class Cycle
+    public class Cycle
     {
         public static int GetAtoPowB(int a, int b)
         {
@@ -18,27 +18,22 @@ namespace Library
         }
         public static int[] GetNumbersFrom1To1000DividedA(int a)
         {
-            int count = 0;
-
-            for (int i = 1; i < 1000; i++)
+           
+            if (a != 0 && a <= 1000)
             {
-                if (i % a == 0)
+                int[] array = new int[1000 / a];
+                int j = 0;
+                for (int i = a; i <= 1000; i += a)
                 {
-                    count++;
+                    array[j] = i;
+                    ++j;
                 }
+                return array;
             }
-
-            int[] result=new int[count];
-            int j = 0;
-
-            for (int i = 1; i <= 1000; i++)
+            else
             {
-                if (i % a == 0)
-                {
-                    result[j++]=i;
-                }
+                throw new ArgumentException("a==0 or a>1000");
             }
-            return result;
         }
         public static int FindAmountOfNumbersWhoseSquareLessA(int a)
         {
@@ -96,13 +91,13 @@ namespace Library
             }
             else
             {
-                throw new Exception("a=b");
+                throw new ArgumentException("a=b");
             }
         }
         public static int GetNumFibonachi(int num)
         {
             
-            int a = 0;
+            int a = 1;
             int b = 1;
             int Nfib;
             
@@ -175,7 +170,7 @@ namespace Library
             }
             return result;
         }
-        public static int ReturnMirrorMumber(int num)
+        public static int GetMirrorMumber(int num)
         {
             int revers = 0;
 
@@ -242,7 +237,7 @@ namespace Library
                 }
                 if (sumEven > sumNotEven)
                 {
-                    array[++j] = i;
+                    array[j++] = i;
                 }
 
                 sumEven = 0;

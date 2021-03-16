@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Library
 {
-    class Arrays
+    public class Arrays
     {
-        public static int FindMinArray(int[] array)
+        public static int FindMinElemInArray(int[] array)
         {
             
             int min = array[0];
@@ -21,7 +21,7 @@ namespace Library
             }
             return min;
         }
-        public static int FindMaxArray(int[] array)
+        public static int FindMaxElemInArray(int[] array)
         {
            
             int max = array[0];
